@@ -5,8 +5,9 @@ const PORT    = process.env.PORT || 3000;
 // Parsing automatique du JSON dans req.body
 app.use(express.json());
 
-// Routes produits
-app.use("/products", require("./routes/products"));
+// ── Routes ────────────────────────────────────────────────────────────────────
+app.use("/auth",     require("./routes/auth"));      // POST /auth/login
+app.use("/products", require("./routes/products"));  // CRUD produits
 
 // Route racine
 app.get("/", (req, res) => {
